@@ -59,6 +59,20 @@ public class ContaTest {
 
     }
 
+    @Test
+    @DisplayName("Saque Conta Inativa")
+    public void saqueContaInativa(){
 
+        Conta conta = new Conta();
+
+        conta.ativar();
+        conta.depositar(100.00);
+
+        conta.inativar();
+        conta.sacar(20.00);
+
+        Assertions.assertEquals(100.00, conta.getSaldo());
+
+    }
 
 }
