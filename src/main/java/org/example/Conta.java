@@ -17,12 +17,14 @@ public class Conta {
     }
 
     public void depositar(double valor){
-        if(this.ativo)
+        if(this.ativo) {
             this.saldo += valor;
+        }
     }
 
     public void sacar(double valor){
-        if(this.ativo && (this.saldo > 0))
+        if(this.ativo && (this.saldo - valor >= 0)) {
             this.saldo -= valor;
+        }
     }
 }

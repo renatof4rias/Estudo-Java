@@ -30,6 +30,21 @@ public class ContaTest {
 
     }
 
+    @Test
+    @DisplayName("Saque Conta Ativa e Saldo Positivo")
+    public void saqueContaAtiva(){
+
+        Conta conta = new Conta();
+        conta.ativar();
+
+        conta.depositar(100.00);
+        conta.sacar(20.00);
+
+        Assertions.assertEquals(80.00, conta.getSaldo());
+
+    }
+
+
 
 
 }
