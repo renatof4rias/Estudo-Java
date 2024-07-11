@@ -1,6 +1,6 @@
 package org.example;
 
-public class ContaTest {
+public class ContaTeste {
     public static void main(String[] args) {
 
         // Depositar com Conta Ativa
