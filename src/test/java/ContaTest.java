@@ -18,7 +18,17 @@ public class ContaTest {
 
     }
 
+    @Test
+    @DisplayName("Deposito Conta Inativa")
+    public void naoDeveDepositarComContaInativa(){
 
+        Conta conta = new Conta();
+
+        conta.inativar();
+        conta.depositar(100.00);
+        Assertions.assertEquals(0.00, conta.getSaldo());
+
+    }
 
 
 
