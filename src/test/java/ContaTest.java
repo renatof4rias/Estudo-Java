@@ -45,6 +45,20 @@ public class ContaTest {
     }
 
 
+    @Test
+    @DisplayName("Saque Conta Ativa e Saldo Negativo")
+    public void saqueSaldoNegativo(){
+
+        Conta conta = new Conta();
+        conta.ativar();
+
+        conta.depositar(100.00);
+        conta.sacar(110.00);
+
+        Assertions.assertEquals(100.00, conta.getSaldo());
+
+    }
+
 
 
 }
