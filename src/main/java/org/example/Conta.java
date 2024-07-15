@@ -16,15 +16,21 @@ public class Conta {
         this.ativo = false;
     }
 
-    public void depositar(double valor){
+    public boolean depositar(double valor){
         if(this.ativo) {
             this.saldo += valor;
+            return true;
+        }else{
+            return false;
         }
     }
 
-    public void sacar(double valor){
+    public boolean sacar(double valor){
         if(this.ativo && (this.saldo - valor >= 0)) {
             this.saldo -= valor;
+            return true;
+        }else{
+            return false;
         }
     }
 }
