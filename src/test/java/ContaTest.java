@@ -27,7 +27,7 @@ public class ContaTest {
     @DisplayName("Deposito Conta Ativa")
     public void deveDepositarComContaAtiva(){
 
-        Assertions.assertTrue(conta.depositar(depositoInicial));
+      conta.depositar(depositoInicial);
         Assertions.assertEquals(depositoInicial, conta.getSaldo());
 
     }
@@ -37,7 +37,7 @@ public class ContaTest {
     public void naoDeveDepositarComContaInativa(){
 
         conta.inativar();
-        Assertions.assertFalse(conta.depositar(depositoInicial));
+        Assertions.assertThrows(RuntimeException.class, () ->conta.depositar(depositoInicial));
         Assertions.assertEquals(saldoZerado, conta.getSaldo());
 
     }
@@ -46,8 +46,8 @@ public class ContaTest {
     @DisplayName("Saque Conta Ativa e Saldo Positivo")
     public void saqueContaAtiva(){
 
-        Assertions.assertTrue(conta.depositar(depositoInicial));
-        Assertions.assertTrue(conta.sacar(saqueValido));
+        conta.depositar(depositoInicial);
+        conta.sacar(saqueValido);
         Assertions.assertEquals(depositoInicial - saqueValido, conta.getSaldo());
 
     }
@@ -57,8 +57,8 @@ public class ContaTest {
     @DisplayName("Saque Conta Ativa e Saldo Negativo")
     public void saqueSaldoNegativo(){
 
-        Assertions.assertTrue(conta.depositar(depositoInicial));
-        Assertions.assertFalse(conta.sacar(saqueInvalido));
+        conta.depositar(depositoInicial);
+        Assertions.assertThrows(RuntimeException.class, () ->conta.sacar(saqueInvalido));
         Assertions.assertEquals(depositoInicial, conta.getSaldo());
 
     }
@@ -67,9 +67,9 @@ public class ContaTest {
     @DisplayName("Saque Conta Inativa")
     public void saqueContaInativa(){
 
-        Assertions.assertTrue(conta.depositar(depositoInicial));
+       conta.depositar(depositoInicial);
         conta.inativar();
-        Assertions.assertFalse(conta.sacar(saqueValido));
+        Assertions.assertThrows(RuntimeException.class,() ->conta.sacar(saqueValido));
         Assertions.assertEquals(depositoInicial, conta.getSaldo());
 
     }
