@@ -1,19 +1,24 @@
 import org.example.Conta;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class ContaTest {
 
+    private Conta conta;
+
+    @BeforeEach
+    public void inicializarConta(){
+        conta = new Conta();
+        conta.ativar();
+    }
+
     @Test
     @DisplayName("Deposito Conta Ativa")
     public void deveDepositarComContaAtiva(){
 
-        Conta conta = new Conta();
-
-        conta.ativar();
         conta.depositar(100.00);
-
         Assertions.assertEquals(100.00, conta.getSaldo());
 
     }
@@ -21,8 +26,6 @@ public class ContaTest {
     @Test
     @DisplayName("Deposito Conta Inativa")
     public void naoDeveDepositarComContaInativa(){
-
-        Conta conta = new Conta();
 
         conta.inativar();
         conta.depositar(100.00);
@@ -33,9 +36,6 @@ public class ContaTest {
     @Test
     @DisplayName("Saque Conta Ativa e Saldo Positivo")
     public void saqueContaAtiva(){
-
-        Conta conta = new Conta();
-        conta.ativar();
 
         conta.depositar(100.00);
         conta.sacar(20.00);
@@ -49,9 +49,6 @@ public class ContaTest {
     @DisplayName("Saque Conta Ativa e Saldo Negativo")
     public void saqueSaldoNegativo(){
 
-        Conta conta = new Conta();
-        conta.ativar();
-
         conta.depositar(100.00);
         conta.sacar(110.00);
 
@@ -63,9 +60,6 @@ public class ContaTest {
     @DisplayName("Saque Conta Inativa")
     public void saqueContaInativa(){
 
-        Conta conta = new Conta();
-
-        conta.ativar();
         conta.depositar(100.00);
 
         conta.inativar();
@@ -74,5 +68,4 @@ public class ContaTest {
         Assertions.assertEquals(100.00, conta.getSaldo());
 
     }
-
 }
