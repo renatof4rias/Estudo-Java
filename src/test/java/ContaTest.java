@@ -27,7 +27,7 @@ public class ContaTest {
     @DisplayName("Deposito Conta Ativa")
     public void deveDepositarComContaAtiva(){
 
-        conta.depositar(depositoInicial);
+        Assertions.assertTrue(conta.depositar(depositoInicial));
         Assertions.assertEquals(depositoInicial, conta.getSaldo());
 
     }
@@ -37,7 +37,7 @@ public class ContaTest {
     public void naoDeveDepositarComContaInativa(){
 
         conta.inativar();
-        conta.depositar(depositoInicial);
+        Assertions.assertFalse(conta.depositar(depositoInicial));
         Assertions.assertEquals(saldoZerado, conta.getSaldo());
 
     }
@@ -46,8 +46,8 @@ public class ContaTest {
     @DisplayName("Saque Conta Ativa e Saldo Positivo")
     public void saqueContaAtiva(){
 
-        conta.depositar(depositoInicial);
-        conta.sacar(saqueValido);
+        Assertions.assertTrue(conta.depositar(depositoInicial));
+        Assertions.assertTrue(conta.sacar(saqueValido));
         Assertions.assertEquals(depositoInicial - saqueValido, conta.getSaldo());
 
     }
@@ -57,8 +57,8 @@ public class ContaTest {
     @DisplayName("Saque Conta Ativa e Saldo Negativo")
     public void saqueSaldoNegativo(){
 
-        conta.depositar(depositoInicial);
-        conta.sacar(saqueInvalido);
+        Assertions.assertTrue(conta.depositar(depositoInicial));
+        Assertions.assertFalse(conta.sacar(saqueInvalido));
         Assertions.assertEquals(depositoInicial, conta.getSaldo());
 
     }
@@ -67,9 +67,9 @@ public class ContaTest {
     @DisplayName("Saque Conta Inativa")
     public void saqueContaInativa(){
 
-        conta.depositar(depositoInicial);
+        Assertions.assertTrue(conta.depositar(depositoInicial));
         conta.inativar();
-        conta.sacar(saqueValido);
+        Assertions.assertFalse(conta.sacar(saqueValido));
         Assertions.assertEquals(depositoInicial, conta.getSaldo());
 
     }
