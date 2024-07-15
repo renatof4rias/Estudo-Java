@@ -1,15 +1,24 @@
 import org.example.Conta;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 public class ContaTest {
 
     private Conta conta;
+    private static double depositoInicial;
+    private static double saqueValido;
+    private static double saqueInvalido;
+    private static double saldoZerado;
+
+    @BeforeAll
+    private static void definirValoresPadroes(){
+      saldoZerado = 0.0;
+      depositoInicial = 100.00;
+      saqueValido = 70.00;
+      saqueInvalido = 110.00;
+    }
 
     @BeforeEach
-    public void inicializarConta(){
+    private void inicializarConta(){
         conta = new Conta();
         conta.ativar();
     }
@@ -18,8 +27,8 @@ public class ContaTest {
     @DisplayName("Deposito Conta Ativa")
     public void deveDepositarComContaAtiva(){
 
-        conta.depositar(100.00);
-        Assertions.assertEquals(100.00, conta.getSaldo());
+        conta.depositar(depositoInicial);
+        Assertions.assertEquals(depositoInicial, conta.getSaldo());
 
     }
 
@@ -28,8 +37,8 @@ public class ContaTest {
     public void naoDeveDepositarComContaInativa(){
 
         conta.inativar();
-        conta.depositar(100.00);
-        Assertions.assertEquals(0.00, conta.getSaldo());
+        conta.depositar(depositoInicial);
+        Assertions.assertEquals(saldoZerado, conta.getSaldo());
 
     }
 
@@ -37,10 +46,9 @@ public class ContaTest {
     @DisplayName("Saque Conta Ativa e Saldo Positivo")
     public void saqueContaAtiva(){
 
-        conta.depositar(100.00);
-        conta.sacar(20.00);
-
-        Assertions.assertEquals(80.00, conta.getSaldo());
+        conta.depositar(depositoInicial);
+        conta.sacar(saqueValido);
+        Assertions.assertEquals(depositoInicial - saqueValido, conta.getSaldo());
 
     }
 
@@ -49,10 +57,9 @@ public class ContaTest {
     @DisplayName("Saque Conta Ativa e Saldo Negativo")
     public void saqueSaldoNegativo(){
 
-        conta.depositar(100.00);
-        conta.sacar(110.00);
-
-        Assertions.assertEquals(100.00, conta.getSaldo());
+        conta.depositar(depositoInicial);
+        conta.sacar(saqueInvalido);
+        Assertions.assertEquals(depositoInicial, conta.getSaldo());
 
     }
 
@@ -60,12 +67,10 @@ public class ContaTest {
     @DisplayName("Saque Conta Inativa")
     public void saqueContaInativa(){
 
-        conta.depositar(100.00);
-
+        conta.depositar(depositoInicial);
         conta.inativar();
-        conta.sacar(20.00);
-
-        Assertions.assertEquals(100.00, conta.getSaldo());
+        conta.sacar(saqueValido);
+        Assertions.assertEquals(depositoInicial, conta.getSaldo());
 
     }
 }
