@@ -23,11 +23,7 @@ public class GerenciadoraClientesTest_Ex1 {
 
         Cliente cliente = gerCliente.pesquisaCliente(1);
 
-        Assertions. assertNotNull(cliente, "O cliente deve ser encontrado e não deve ser null");
-
         Assertions.assertEquals(cliente.getId(), 1);
         Assertions.assertEquals(cliente.getEmail(), "aa");
     }
-
 }
-
