@@ -1,3 +1,5 @@
+package org.example;
+
 import org.example.Conta;
 import org.junit.jupiter.api.*;
 
