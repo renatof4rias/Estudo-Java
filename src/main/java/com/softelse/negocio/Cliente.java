@@ -13,6 +13,7 @@ public class Cliente {
         this.id = id;
         this.nome = nome;
         this.idade = idade;
+        this.email = email;
         this.idContaCorrente = idContaCorrente;
         this.ativo = ativo;
     }
@@ -39,6 +40,18 @@ public class Cliente {
 
     public void setIdade(int idade) {
         this.idade = idade;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", idade=" + idade +
+                ", email='" + email + '\'' +
+                ", ativo=" + ativo +
+                ", idContaCorrente=" + idContaCorrente +
+                '}';
     }
 
     public String getEmail() {
