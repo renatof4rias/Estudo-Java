@@ -44,7 +44,7 @@ public class GerenciadoraClientesTest_Ex6 {
 
         // ========== Verificação ==========
         Assertions.assertEquals(cliente.getId(), 1);
-        Assertions.assertEquals(cliente.getEmail(), "b");
+        Assertions.assertEquals(cliente.getEmail(), "aa");
     }
 
     @Test
