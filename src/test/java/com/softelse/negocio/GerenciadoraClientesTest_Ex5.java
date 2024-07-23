@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GerenciadoraClientesTest_Ex05 {
+public class GerenciadoraClientesTest_Ex5 {
     @Test
     public void testPesquisaCliente(){
 
