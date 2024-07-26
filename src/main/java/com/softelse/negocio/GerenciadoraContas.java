@@ -1,6 +1,5 @@
 package com.softelse.negocio;
 
-import org.example.Conta;
 
 import java.util.List;
 
