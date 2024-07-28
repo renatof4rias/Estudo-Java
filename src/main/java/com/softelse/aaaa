@@ -1,0 +1,75 @@
+Estudos de Hoje Foram Sobre Banco de Dados.
+
+Aula 1 a 4
+Link Curso> https://www.cursoemvideo.com/curso/mysql/aulas/banco-de-dados/modulos/criando-o-primeiro-banco-de-dados/
+
+Como Surgiu ?
+Com a Necessidade de se Armazenar dados de forma mais eficiente e inteligente
+
+Para que Serve ?
+Armazenar Dados
+
+Como Funciona ?
+Dados "Coletados" sao Chamados de Registros que se organiza em:
+Banco de Dados, que são como um armario grande.
+Tabelas, que são "Pastas" que guardam dados/caracteristicas definidas
+Registros, que sao os dados.
+
+
+Exemplo:
+
+        Banco de Dados -+
+                        |
+                        +-> Tabelas-+
+                                    |
+                                    +-> Caracteristicas > Nome
+                                                        > Idade
+                                                        > Sexo
+                                                        > Peso
+                                                        > Nacionalidade
+
+
+
+Comandos SQL:
+
+Create Database Cadastro;   Meu Banco de Dados é criado com o nome Cadastro.
+
+****  Necessario comando " Use Cadastro;   > Sinalizando ao MySQL qual banco voce quer trabalhar ****
+
+Create Table Pessoas (
+nome varchar(30),
+idade tinyInt(3),
+Sexo char(1),
+Peso Float,
+Altura Float,
+Nacionalidade varchar(20)
+);
+
+ OUUUUUUUUUUUU
+
+ Create Table Pessoas (nome varchar(30), idade tinyInt(3), Sexo char(1), Peso Float, Altura Float, Nacionalidade varchar(20));
+
+
+Nao muda o comando, apenas a legibilidade.
+
+Ao final de forma visual a tabelhinha que criamos com o comando anterior fica assim:
+
++------------------------------+-------+------+-------+--------+--------------------+
+|            Nome              | Idade | Sexo | Peso  | Altura |    Nacionalidade   |
++------------------------------+-------+------+-------+--------+--------------------+
+|                              |       |      |       |        |                    |
++------------------------------+-------+------+-------+--------+--------------------+
+|                              |       |      |       |        |                    |
++------------------------------+-------+------+-------+--------+--------------------+
+|                              |       |      |       |        |                    |
++------------------------------+-------+------+-------+--------+--------------------+
+|                              |       |      |       |        |                    |
++------------------------------+-------+------+-------+--------+--------------------+
+
+
+os dados sao Armazenados em campos de caracteristicas, caracteristicas sao armazenados em tabelas, tabelas sao armazenados em bancos de dados e bancos de dados sao
+em servidores.
+
+
+
+
