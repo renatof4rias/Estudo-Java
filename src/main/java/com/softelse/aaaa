@@ -76,6 +76,21 @@ Refizemos o Banco de Dados, Adicionando constraints para setar o padrão de cara
 otimizamos os tipos de dados da tabela, alteramos o campo idade por nascimento e adicionamos o id
 com AUTO_INCREMENT e os torna-los como Primary_Key
 
+Comandos:
+create database cadastro default character set utf8 default collate utf8_general_ci;
+
+create table pessoas (
+id int not null auto_increment,
+nome varchar(30) not null,
+nascimento date,
+sexo enum ('M', 'F'),
+peso decimal(5,2),
+altura decimal(3,2),
+nacionalidade varchar(20) default 'Brasil',
+primary key (id)
+)default charset = utf8;
+
+
 
 
 
