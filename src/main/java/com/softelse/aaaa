@@ -70,7 +70,11 @@ Ao final de forma visual a tabelhinha que criamos com o comando anterior fica as
 os dados sao Armazenados em campos de caracteristicas, caracteristicas sao armazenados em tabelas, tabelas sao armazenados em bancos de dados e bancos de dados sao
 em servidores.
 
+Aula 4/ Video 5
 
+Refizemos o Banco de Dados, Adicionando constraints para setar o padrão de caracter para utf8.
+otimizamos os tipos de dados da tabela, alteramos o campo idade por nascimento e adicionamos o id
+com AUTO_INCREMENT e os torna-los como Primary_Key
 
 
 
