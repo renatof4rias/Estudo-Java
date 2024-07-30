@@ -91,6 +91,19 @@ primary key (id)
 )default charset = utf8;
 
 
+Aula 5/ Video 6
+
+
+Inserindo Registros no Banco
+
+Comando:
+
+
+insert into pessoas (id     ,    nome   ,   nascimento,    sexo,   peso,   altura,      nacionalidade) values
+                    (default, 'Adalgiza',  '1930-11-02',   'F',   '63.2',  '1.75',        'irlanda'),
+                    (default, 'Claúdio' ,  '1975-04-22',   'M',   '99.0',  '2.15',         default),
+                    (default, 'Pedro'   ,  '1999-12-03',   'M',    '87',   '2',           default),
+                    (default, 'Janaína' ,  '1987-11-12',   'F',   '75.4',  '1.66',         'EUA');
 
 
 
