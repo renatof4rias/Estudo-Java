@@ -127,26 +127,13 @@ Alter Table pessoas rename to gafanhotos -> Renomeia a tabela Pessoas para gafan
 
 
 
+Aula 7/ Video 8
 
+Comandos:
 
+update cursos set ano = '2050';                                               >Atualiza na coluna ano todos os valores para 2050
+update cursos set ano = '2050', carga = '800' where ano = '2018', ........;   >atualiza na coluna ano e carga apenas onde o ano é igual a 2018
+update cursos set ano = '2050', carga = '800' where ano = '2018' limite row 1 >atualiza na coluna ano e carga apenas onde o ano é igual a 2018 afetando apenas 1 linha
+delete from cursos where ano = '2050';  Deleta todas os registros onde o ano é igual a 2050
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Aula 5/ Video 6
+truncate cursos ;  Deleta todos os dados da tabela curso
