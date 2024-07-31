@@ -105,6 +105,48 @@ insert into pessoas (id     ,    nome   ,   nascimento,    sexo,   peso,   altur
                     (default, 'Pedro'   ,  '1999-12-03',   'M',    '87',   '2',           default),
                     (default, 'Janaína' ,  '1987-11-12',   'F',   '75.4',  '1.66',         'EUA');
 
+Aula 6/ Video 7
+
+Alterando Dados de Uma Tabela
+
+Comandos:
+
+Alter Table pessoas add column profissao varchar(10); -> Adiciona uma coluna nova chamada profissao
+
+Alter Table pessoas add column profissao varchar(10) after nome; -> Adiciona uma coluna nova chamada profissao depois da coluna nome
+
+Alter Table pessoas add column profissao varchar(10) first; -> Adiciona uma coluna nova chamada profissao, como a primeira coluna
+
+Alter Table pessoas drop column profissao -> Deleta a coluna profissao
+
+Alter Table pessoas modify column profissao varchar(20) -> modifica tipo/constraint de uma tabela
+
+Alter Table pessoas change column profissao prof varchar(20) -> renomeia a coluna de profissao para prof
+
+Alter Table pessoas rename to gafanhotos -> Renomeia a tabela Pessoas para gafanhotos.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Aula 5/ Video 6
