@@ -137,4 +137,4 @@ update cursos set ano = '2050', carga = '800' where ano = '2018' limite row 1 >a
 delete from cursos where ano = '2050';  Deleta todas os registros onde o ano é igual a 2050
 
 truncate cursos ;  Deleta todos os dados da tabela curso
-AAAA
+AA
